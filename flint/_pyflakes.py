@@ -6,18 +6,18 @@ import pyflakes.checker
 def patch_pyflakes():
     """Add error codes to Pyflakes messages."""
     codes = dict([line.split()[::-1] for line in (
-        'F402 UnusedImport',
-        'F403 ImportShadowedByLoopVar',
-        'F404 ImportStarUsed',
-        'F405 LateFutureImport',
-        'F810 Redefined',
+        'F401 UnusedImport',
+        'F402 ImportShadowedByLoopVar',
+        'F403 ImportStarUsed',
+        'F404 LateFutureImport',
+        'F810 Redefined',               # XXX Obsolete?
         'F811 RedefinedWhileUnused',
         'F812 RedefinedInListComp',
-        'F820 UndefinedName',
-        'F821 UndefinedExport',
-        'F822 UndefinedLocal',
-        'F830 DuplicateArgument',
-        'F840 UnusedVariable',
+        'F821 UndefinedName',
+        'F822 UndefinedExport',
+        'F823 UndefinedLocal',
+        'F831 DuplicateArgument',
+        'F841 UnusedVariable',
     )])
 
     for name, obj in vars(pyflakes.messages).items():
