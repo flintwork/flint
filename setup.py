@@ -23,7 +23,7 @@ setup(
     version=get_version(),
     description="modular Python source code checker",
     long_description=get_long_description(),
-    keywords='flint pep8 pyflakes',
+    keywords='flint pep8 pyflakes lint',
     author='Florent Xicluna',
     author_email='florent.xicluna@gmail.com',
     url='https://github.com/florentx/flint',
