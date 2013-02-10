@@ -22,7 +22,7 @@ def patch_pyflakes():
 
     for name, obj in vars(pyflakes.messages).items():
         if name[0].isupper() and obj.message:
-            obj.code = codes.get(name, 'F999')
+            obj.flint_msg = '%s %s' % (codes.get(name, 'F999'), obj.message)
 patch_pyflakes()
 
 
@@ -43,5 +43,4 @@ class FlakesChecker(pyflakes.checker.Checker):
 
     def run(self):
         for m in self.messages:
-            text = '%s %s' % (m.code, m.message) % m.message_args
-            yield m.lineno, 0, text, type(m)
+            yield m.lineno, 0, (m.flint_msg % m.message_args), m.__class__
