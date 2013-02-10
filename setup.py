@@ -32,7 +32,7 @@ setup(
     zip_safe=False,
     install_requires=[
         'setuptools',
-        'pep8 >= 1.4.2a0',
+        'pep8 >= 1.4.2',
         'pyflakes >= 0.6.1',
     ],
     entry_points={
