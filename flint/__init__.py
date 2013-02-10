@@ -4,6 +4,8 @@ import sys
 
 import pep8
 
+from flint.util import OrderedSet
+
 __version__ = '0.1a1'
 if sys.platform == 'win32':
     DEFAULT_CONFIG = os.path.expanduser(r'~\.flint')
@@ -14,7 +16,8 @@ else:
 
 def register_extensions():
     """Register all the extensions."""
-    extensions = [('pep8', pep8.__version__)]
+    extensions = OrderedSet()
+    extensions.add(('pep8', pep8.__version__))
     parser_hooks = []
     options_hooks = []
     try:
@@ -25,7 +28,7 @@ def register_extensions():
         for entry in iter_entry_points('flint.extension'):
             checker = entry.load()
             pep8.register_check(checker, codes=[entry.name])
-            extensions.append((checker.name, checker.version))
+            extensions.add((checker.name, checker.version))
             if hasattr(checker, 'add_options'):
                 parser_hooks.append(checker.add_options)
             if hasattr(checker, 'parse_options'):

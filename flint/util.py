@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-__all__ = ['ast', 'iter_child_nodes']
+__all__ = ['ast', 'iter_child_nodes', 'OrderedSet']
 
 try:
     import ast
@@ -30,3 +30,12 @@ except ImportError:   # Python 2.5
                 for item in field:
                     if isinstance(item, astcls):
                         yield _ast_compat(item)
+
+
+class OrderedSet(list):
+    """List without duplicates."""
+    __slots__ = ()
+
+    def add(self, value):
+        if value not in self:
+            self.append(value)
