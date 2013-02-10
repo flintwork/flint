@@ -15,7 +15,7 @@ except ImportError:   # Python 2.5
             node.decorator_list = node.decorators
         return node
 
-    def iter_child_nodes(node, astcls=ast.AST, ast_compat=_ast_compat):
+    def iter_child_nodes(node):
         """
         Yield all direct child nodes of *node*, that is, all fields that
         are nodes and all items of fields that are lists of nodes.
@@ -24,11 +24,11 @@ except ImportError:   # Python 2.5
             return
         for name in node._fields:
             field = getattr(node, name, None)
-            if isinstance(field, astcls):
+            if isinstance(field, ast.AST):
                 yield _ast_compat(field)
             elif isinstance(field, list):
                 for item in field:
-                    if isinstance(item, astcls):
+                    if isinstance(item, ast.AST):
                         yield _ast_compat(item)
 
 
