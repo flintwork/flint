@@ -35,6 +35,7 @@ class FlakesChecker(pyflakes.checker.Checker):
     def add_options(cls, parser):
         parser.add_option('--builtins',
                           help="define more built-ins, comma separated")
+        parser.config_options.append('builtins')
 
     @classmethod
     def parse_options(cls, options):

@@ -2,6 +2,12 @@ Changelog
 ---------
 
 
+0.2 (unreleased)
+````````````````
+
+* Read ``builtins`` from the configuration file.  (Issue #1)
+
+
 0.1 (2013-02-11)
 ````````````````
 
