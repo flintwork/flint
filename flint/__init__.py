@@ -6,7 +6,7 @@ import pep8
 
 from flint.util import OrderedSet
 
-__version__ = '0.1a1'
+__version__ = '0.1'
 if sys.platform == 'win32':
     DEFAULT_CONFIG = os.path.expanduser(r'~\.flint')
 else:

@@ -23,7 +23,7 @@ setup(
     version=get_version(),
     description="the modular Python source code checker",
     long_description=get_long_description(),
-    keywords='flint pep8 pyflakes lint',
+    keywords='flint pep8 pyflakes flake8 lint',
     author='Florent Xicluna',
     author_email='florent.xicluna@gmail.com',
     url='https://github.com/flintwork/flint',
@@ -44,7 +44,7 @@ setup(
         ],
     },
     classifiers=[
-        'Development Status :: 2 - Pre-Alpha',
+        'Development Status :: 3 - Alpha',
         'Environment :: Console',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
