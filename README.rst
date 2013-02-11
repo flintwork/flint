@@ -14,8 +14,8 @@ Features
 * Extendable through ``flint.extension`` entry points.
 
 * Plugin examples:
-  `flint-mccabe <https://github.com/florentx/flint-mccabe>`_ and
-  `flint-naming <https://github.com/florentx/flint-naming>`_
+  `flint-mccabe <https://github.com/flintwork/flint-mccabe>`_ and
+  `flint-naming <https://github.com/flintwork/flint-naming>`_
 
 
 Installation
@@ -95,9 +95,9 @@ A list of the known prefixes is published below:
   <http://pep8.readthedocs.org/en/latest/intro.html#error-codes>`_
 - ``F***``: PyFlakes codes (see below)
 - ``C9**``: McCabe complexity plugin `flint-mccabe
-  <https://github.com/florentx/flint-mccabe>`_
+  <https://github.com/flintwork/flint-mccabe>`_
 - ``N8**``: Naming Conventions plugin `flint-naming
-  <https://github.com/florentx/flint-naming>`_
+  <https://github.com/flintwork/flint-naming>`_
 
 
 The original PyFlakes does not provide error codes.  Flint patches the PyFlakes
@@ -161,4 +161,4 @@ Links
 
 * `flake8 documentation <https://bitbucket.org/tarek/flake8/src/tip/README.rst>`_
 
-* `flint on GitHub <http://github.com/florentx/flint>`_
+* `flint on GitHub <http://github.com/flintwork/flint>`_
