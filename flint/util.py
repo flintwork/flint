@@ -8,12 +8,10 @@ try:
 except ImportError:   # Python 2.5
     import _ast as ast
 
-    def _ast_compat(node):
-        if isinstance(node, ast.ClassDef):
-            node.decorator_list = []
-        elif isinstance(node, ast.FunctionDef):
-            node.decorator_list = node.decorators
-        return node
+    if 'decorator_list' not in ast.ClassDef._fields:
+        # Patch the missing attribute 'decorator_list'
+        ast.ClassDef.decorator_list = ()
+        ast.FunctionDef.decorator_list = property(lambda s: s.decorators)
 
     def iter_child_nodes(node):
         """
@@ -25,11 +23,11 @@ except ImportError:   # Python 2.5
         for name in node._fields:
             field = getattr(node, name, None)
             if isinstance(field, ast.AST):
-                yield _ast_compat(field)
+                yield field
             elif isinstance(field, list):
                 for item in field:
                     if isinstance(item, ast.AST):
-                        yield _ast_compat(item)
+                        yield item
 
 
 class OrderedSet(list):
