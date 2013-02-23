@@ -3,6 +3,13 @@ flint - the modular Python source code checker
 
 Flint is a thin wrapper around some Python checkers.
 
+.. note::
+   ``flint`` is now merged into `Flake8 2.0
+   <https://pypi.python.org/pypi/flake8>`_.
+   Please consider https://pypi.python.org/pypi/flake8 instead.
+
+----
+
 
 Features
 --------
@@ -15,7 +22,7 @@ Features
 
 * Plugin examples:
   `flint-mccabe <https://github.com/flintwork/flint-mccabe>`_ and
-  `flint-naming <https://github.com/flintwork/flint-naming>`_
+  `pep8-naming <https://github.com/flintwork/pep8-naming>`_
 
 
 Installation
@@ -96,8 +103,8 @@ A list of the known prefixes is published below:
 - ``F***``: PyFlakes codes (see below)
 - ``C9**``: McCabe complexity plugin `flint-mccabe
   <https://github.com/flintwork/flint-mccabe>`_
-- ``N8**``: Naming Conventions plugin `flint-naming
-  <https://github.com/flintwork/flint-naming>`_
+- ``N8**``: Naming Conventions plugin `pep8-naming
+  <https://github.com/flintwork/pep8-naming>`_
 
 
 The original PyFlakes does not provide error codes.  Flint patches the PyFlakes
@@ -131,18 +138,6 @@ messages to add the following codes:
 +------+--------------------------------------------------------------------+
 
 
-Planned features
-----------------
-
-These features from ``flake8`` will be added in a future release
-(patches are welcomed):
-
-- Mercurial hook
-- Git hook
-- Buildout integration
-- Setuptools integration
-
-
 Original projects
 -----------------
 
@@ -159,6 +154,6 @@ Links
 
 * `pep8 documentation <http://pep8.readthedocs.org/>`_
 
-* `flake8 documentation <https://bitbucket.org/tarek/flake8/src/tip/README.rst>`_
+* `flake8 documentation <https://flake8.readthedocs.org>`_
 
 * `flint on GitHub <http://github.com/flintwork/flint>`_
